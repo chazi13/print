@@ -223,7 +223,36 @@ if (!$_SESSION['login']) {
                 $('.user-telp').text(dataUser.telp);
                 $('.user-alamat').text(dataUser.alamat);
                 $('.user-ket').text(dataUser.keterangan);
-            })
+            });
+
+            $('#konfirm-kirim').click(function () {
+                var idTransaksi = $(this).attr('data-transaksi');
+                $('#id-transaksi').val(idTransaksi);
+            });
+
+            $('#btn-detail-pesanan').click(function () {
+                var idTransaksi = $(this).attr('data-transaksi');
+                $.ajax({
+                    url: '../detail_pesanan.php',
+                    method: 'GET',
+                    data: {'id_transaksi': idTransaksi},
+                    success: function (res) {
+                        $('#detail').html(res);
+                    }
+                })
+            });
+
+            $('#btn-detail-transaksi').click(function () {
+                var idTransaksi = $(this).attr('data-transaksi');
+                $.ajax({
+                    url: '../detail_transaksi.php',
+                    method: 'GET',
+                    data: {'id_transaksi': idTransaksi},
+                    success: function (res) {
+                        $('#detail-transaksi-container').html(res);
+                    }
+                })
+            });
         });
     </script>
 </body>

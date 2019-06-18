@@ -12,11 +12,18 @@ if (mysqli_num_rows($query) == 1) {
     $_SESSION['id'] = $row['id_admin'];
     $_SESSION['nama'] = $row['nama'];
     $_SESSION['foto'] = $row['foto'];
-    $_SESSION['level'] = $row['admin'];
+    $_SESSION['level'] = 'admin';
     $_SESSION['login'] = true;
 
+    $_SESSION['pesan'] = [
+        'status' => 'success',
+        'isi' => 'Selamat Datang ' . $row['nama']
+    ];
     header('location: ../index.php');
 } else {
-    $_SESSION['pesan'] = 'Login gagal! <br>Username atau password salah';
+    $_SESSION['pesan'] = [
+        'status' => 'danger',
+        'isi' => 'Login gagal! <br>Username atau password salah'
+    ];
     header('location: ../login.php');
 }

@@ -49,7 +49,7 @@
                 <li><a href="sistem/logout.php">Logout</a></li>
               </ul>
             </li>
-            <li class="<?= @$keranjang_active ?>"><a href="index.php?page=keranjang">Keranjang</a></li>
+            <li class="<?= @$keranjang_active ?>"><a href="index.php?page=keranjang">Keranjang (<?= $_SESSION['jml_keranjang'] ?>)</a></li>
           <?php elseif (!@$_SESSION['login']): ?>
             <li class="<?= @$login_active ?>"><a href="login.php">Login</a></li>
           <?php endif; ?>
