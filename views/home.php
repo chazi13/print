@@ -3,19 +3,19 @@
         <ul class="slides">
             <li>
                 <div class="banner">
-                    <img src="assets/img/banner/img1.jpg" alt="Photo by Bank Phrom on Unsplash">
+                    <img src="assets/img/banner/img1.jpg">
                     <div class="banner-content">
-                        <h2>Selamat Datang</h2>
-                        <h3>Vlava</h3>
+                        <!-- <h2>Selamat Datang</h2>
+                        <h3>Vlava</h3> -->
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner">
-                    <img src="assets/img/banner/img2.jpg" alt="Photo by André Robillard on Unsplash">
+                    <img src="assets/img/banner/img2.jpg">
                     <div class="banner-content">
-                        <h2>Selamat Datang</h2>
-                        <h3>Vlava</h3>
+                        <!-- <h2>Selamat Datang</h2>
+                        <h3>Vlava</h3> -->
                     </div>
                 </div>
             </li>
