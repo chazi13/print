@@ -26,7 +26,7 @@
       	  <span class="fa fa-bars color-white"></span>
         </button>
         <div class="navbar-logo">
-          <a href="index.html"><img data-0="width:155px;" data-300=" width:120px;" src="assets/img/logo.png" alt=""></a>
+          <a href="index.html"><img data-0="width:155px;" data-300=" width:120px;" src="assets/img/logo-jasa-cetak-color.png" alt=""></a>
         </div>
       </div>
       <div class="navbar-collapse collapse">

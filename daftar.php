@@ -20,8 +20,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-12 col-md-offset-2">
         <div class="section-header mar-top20">
-            <img src="assets/img/logo.png" alt="logo">
-            <p>Keteragan halaman testimoni</p>
+            <img src="assets/img/logo-jasa-cetak-color.png" alt="logo" style="width: 50%;">
         </div>
         <div class="panel mar-top40 pad-top10" id="login-panel">
           <form action="sistem/aksi_daftar.php" method="post">
