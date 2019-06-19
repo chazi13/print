@@ -18,6 +18,24 @@ switch ($get_page) {
         $page = "views/produk.php";
         break;
 
+    case 'detail_produk':
+        is_login();
+        $produk_active = 'active';
+        $page = "views/detail_produk.php";
+        break;
+
+    case 'keranjang':
+        is_login();
+        $keranjang_active = 'active';
+        $page = "views/keranjang.php";
+        break;
+
+    case 'riwayat':
+        is_login();
+        $riwayat_active = 'active';
+        $page = "views/riwayat.php";
+        break;
+
     case 'tentang':
         $tentang_active = 'active';
         $page = "views/tentang.php";

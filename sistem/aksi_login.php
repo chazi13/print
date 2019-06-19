@@ -8,13 +8,15 @@ $query = mysqli_query($koneksi, "SELECT * FROM `user` WHERE `email` = '$email' A
 
 if (mysqli_num_rows($query) == 1) {
     $row = mysqli_fetch_assoc($query);
+    $check_keranjang = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_keranjang) AS jml_keranjang FROM keranjang WHERE id_user = '$row[id_user]'"));
     
     $_SESSION['id'] = $row['id_user'];
     $_SESSION['nama'] = $row['nama'];
     $_SESSION['foto'] = $row['foto'];
     $_SESSION['level'] = 'user';
     $_SESSION['login'] = true;
-
+    $_SESSION['jml_keranjang'] = $check_keranjang['jml_keranjang'];
+    
     header('location: ../index.php');
 } else {
     $_SESSION['pesan'] = [

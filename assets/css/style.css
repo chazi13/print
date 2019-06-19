@@ -86,6 +86,30 @@ a:hover {
 	text-transform: uppercase;
 }
 
+.bg-info {
+	background-color: #007bb7;
+}
+
+.bg-warning {
+	background-color: goldenrod;
+}
+
+.bg-blue {
+	background-color: #0073b7;
+}
+
+.bg-orange {
+	background-color: #ff851b;
+}
+
+.bg-green {
+	background-color: #00a65a;
+}
+
+.bg-indigo {
+	background: #052a3e;
+}
+
 /*==========================================================================
   Misc & Adjust
  ========================================================================== */
@@ -687,11 +711,33 @@ section.featured.inner {
 }
 
 .produk-panel {
-
+	position: relative;
+	transition: ease .3s;
+	box-shadow: #ddd 2px 4px 15px 4px;
 }
 
-.produk-panel img.produk-img {
-	width: 100%;
+.produk-list .produk-panel:hover {
+	margin-top: -5px;
+}
+
+.produk-panel .produk-img img {
+	width: auto;
+	max-width: 100%;
+	height: 200px;
+}
+
+.produk-panel .produk-desc {
+	margin-top: 15px;
+}
+
+.produk-title {
+	font-weight: 700;
+	color: rgba(5, 42, 62, 1);
+}
+
+.produk-price {
+	font-size: 14px;
+	color: #6f6f6f;
 }
 
 /*====================

@@ -42,6 +42,12 @@ switch ($page) {
         $page_header = 'Daftar User';
         $page = 'user.php';
         break;
+
+    case 'pesanan':
+        $pesanan_active = 'active';
+        $page_header = 'Daftar Pesanan';
+        $page = 'pesanan.php';
+        break;
     
     default:
         $dashboard_active = 'active';
