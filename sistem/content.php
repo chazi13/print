@@ -19,19 +19,19 @@ switch ($get_page) {
         break;
 
     case 'detail_produk':
-        is_login();
+        is_login('user');
         $produk_active = 'active';
         $page = "views/detail_produk.php";
         break;
 
     case 'keranjang':
-        is_login();
+        is_login('user');
         $keranjang_active = 'active';
         $page = "views/keranjang.php";
         break;
 
     case 'riwayat':
-        is_login();
+        is_login('user');
         $riwayat_active = 'active';
         $page = "views/riwayat.php";
         break;
@@ -47,13 +47,13 @@ switch ($get_page) {
         break;
 
     case 'profil':
-        is_login();
+        is_login('user');
         $profil_active = 'active';
         $page = "views/profil.php";
         break;
 
     case 'edit_profil':
-        is_login();
+        is_login('user');
         $profil_active = 'active';
         $page = "views/edit_profil.php";
         break;

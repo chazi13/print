@@ -31,9 +31,9 @@ if (!$_SESSION['login']) {
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini">J<b>C</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg">Jasa<b>Cetak</b></span>
             </a>
 
             <!-- Header Navbar -->
@@ -45,9 +45,9 @@ if (!$_SESSION['login']) {
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <!-- Notifications Menu -->
+                        <!-- Notifications Menu
                         <li class="dropdown notifications-menu">
-                            <!-- Menu toggle button -->
+                            Menu toggle button
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-bell-o"></i>
                                 <span class="label label-warning">10</span>
@@ -55,32 +55,32 @@ if (!$_SESSION['login']) {
                             <ul class="dropdown-menu">
                                 <li class="header">You have 10 notifications</li>
                                 <li>
-                                    <!-- Inner Menu: contains the notifications -->
+                                    Inner Menu: contains the notifications
                                     <ul class="menu">
-                                    <li><!-- start notification -->
+                                    <li>start notification
                                         <a href="#">
                                         <i class="fa fa-users text-aqua"></i> 5 new members joined today
                                         </a>
                                     </li>
-                                    <!-- end notification -->
+                                    end notification
                                     </ul>
                                 </li>
                                 <li class="footer"><a href="#">View all</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="../assets/img/foto-profile/<?= $_SESSION['foto'] ?>" class="user-image" alt="<?= $_SESSION['nama'] ?>">
+                                <img src="../<?= $_SESSION['foto'] ?>" class="user-image" alt="<?= $_SESSION['nama'] ?>">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs"><?= $_SESSION['nama'] ?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="../assets/img/foto-profile/<?= $_SESSION['foto'] ?>" class="img-circle" alt="<?= $_SESSION['nama'] ?>">
+                                    <img src="../<?= $_SESSION['foto'] ?>" class="img-circle" alt="<?= $_SESSION['nama'] ?>">
 
                                     <p>
                                     <?= $_SESSION['nama'] ?>
@@ -89,7 +89,7 @@ if (!$_SESSION['login']) {
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="index.php?page=profil" class="btn btn-default btn-flat">Profil</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="../sistem/logout.php" class="btn btn-default btn-flat">Logout</a>
@@ -112,7 +112,7 @@ if (!$_SESSION['login']) {
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                <img src="../assets/img/foto-profile/<?= $_SESSION['foto'] ?>" class="img-circle" alt="<?= $_SESSION['nama'] ?>">
+                <img src="../<?= $_SESSION['foto'] ?>" class="img-circle" alt="<?= $_SESSION['nama'] ?>">
                 </div>
                 <div class="pull-left info">
                 <p><?= $_SESSION['nama'] ?></p>
@@ -138,10 +138,10 @@ if (!$_SESSION['login']) {
                 <li class="header">MAIN MENU</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="<?= @$dashboard_active ?>"><a href="index.php?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                <li class="<?= @$profil_active ?>"><a href="index.php?page=profil"><i class="fa fa-link"></i> <span>Profil</span></a></li>
-                <li class="<?= @$tentang_active ?>"><a href="index.php?page=tentang"><i class="fa fa-link"></i> <span>Tentang</span></a></li>
+                <li class="<?= @$profil_active ?>"><a href="index.php?page=profil"><i class="fa fa-institution"></i> <span>Profil Perusahaan</span></a></li>
+                <li class="<?= @$tentang_active ?>"><a href="index.php?page=tentang"><i class="fa fa-file-text"></i> <span>Tentang</span></a></li>
                 <li class="<?= @$pk_active ?> treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Produk</span>
+                    <a href="#"><i class="fa fa-cubes"></i> <span>Produk</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -151,8 +151,8 @@ if (!$_SESSION['login']) {
                         <li class="<?= $produk_active ?>"><a href="index.php?page=produk">Produk</a></li>
                     </ul>
                 </li>
-                <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-link"></i> <span>User</span></a></li>
-                <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-link"></i> <span>Pesanan</span></a></li>
+                <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-users"></i> <span>User</span></a></li>
+                <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-list"></i> <span>Pesanan</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
             </section>
