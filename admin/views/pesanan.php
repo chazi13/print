@@ -6,7 +6,7 @@
 <div class="box box-info">
     <div class="box-body">
         <div class="table-responsive">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered data-table">
                 <thead>
                     <th>No</th>
                     <th>Pemesan</th>

@@ -3,10 +3,16 @@ include_once '../sistem/koneksi.php';
 
 $page = $_GET['page'];
 switch ($page) {
-    case 'dahsboard':
+    case 'dashboard':
         $dashboard_active = 'active';
         $page_header = 'Dashboard';
         $page = 'dashboard.php';
+        break;
+
+    case 'tentang':
+        $tentang_active = 'active';
+        $page_header = 'Tentang';
+        $page = 'tentang.php';
         break;
 
     case 'kategori':
@@ -47,6 +53,12 @@ switch ($page) {
         $pesanan_active = 'active';
         $page_header = 'Daftar Pesanan';
         $page = 'pesanan.php';
+        break;
+
+    case 'testimoni':
+        $testimoni_active = 'active';
+        $page_header = 'Daftar Testimoni';
+        $page = 'testimoni.php';
         break;
 
     case 'profil':

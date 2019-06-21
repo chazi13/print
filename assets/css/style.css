@@ -572,6 +572,7 @@ section.featured.inner {
 
 .flexslider .slides img {
 	width: auto;
+	max-width: 100%;
 	display: inline;
 }
 

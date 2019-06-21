@@ -35,7 +35,7 @@ $query_kategori = mysqli_query($koneksi, "SELECT * FROM kategori WHERE nama_kate
                     <div class="form-group">
                         <label for="gambat">Gambar Produk :</label> <br>
                         <img src="../<?= $produk['gambar'] ?>" alt="" style="height: 200px"> <br>
-                        <input type="file" name="gambar" value="<?= $produk['gambar'] ?>" id="gambar" class="form-control" placeholder="Masukan Gambar Produk">
+                        <input type="file" name="gambar" id="gambar" class="form-control" placeholder="Masukan Gambar Produk">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">

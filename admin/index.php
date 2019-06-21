@@ -16,6 +16,9 @@ if (!$_SESSION['login']) {
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../assets/plugins/datatables/datatables.min.css">
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="../assets/fonts/font-awesome/css/font-awesome.min.css">
 
@@ -138,7 +141,7 @@ if (!$_SESSION['login']) {
                 <li class="header">MAIN MENU</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="<?= @$dashboard_active ?>"><a href="index.php?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                <li class="<?= @$profil_active ?>"><a href="index.php?page=profil"><i class="fa fa-institution"></i> <span>Profil Perusahaan</span></a></li>
+                <li class="<?= @$profil_active ?>"><a href="index.php?page=profilp"><i class="fa fa-institution"></i> <span>Profil Perusahaan</span></a></li>
                 <li class="<?= @$tentang_active ?>"><a href="index.php?page=tentang"><i class="fa fa-file-text"></i> <span>Tentang</span></a></li>
                 <li class="<?= @$pk_active ?> treeview">
                     <a href="#"><i class="fa fa-cubes"></i> <span>Produk</span>
@@ -153,6 +156,7 @@ if (!$_SESSION['login']) {
                 </li>
                 <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-users"></i> <span>User</span></a></li>
                 <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-list"></i> <span>Pesanan</span></a></li>
+                <li class="<?= @$testimoni_active ?>"><a href="index.php?page=testimoni"><i class="fa fa-wechat"></i> <span>Testimoni</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
             </section>
@@ -192,6 +196,12 @@ if (!$_SESSION['login']) {
 
     <!-- AdminLTE -->
     <script src="../assets/js/AdminLTE.min.js"></script>
+
+    <!-- TinyMCE -->
+    <script src="../assets/plugins/tinymce/tinymce.min.js"></script>
+    
+    <!-- DataTables -->
+    <script src="../assets/plugins/datatables/datatables.min.js"></script>
 
     <!-- Custom -->
     <script>
@@ -252,6 +262,12 @@ if (!$_SESSION['login']) {
                         $('#detail-transaksi-container').html(res);
                     }
                 })
+            });
+
+            $('.data-table').dataTable();
+
+            tinymce.init({
+                selector: '.texteditor',  // change this value according to your HTML
             });
         });
     </script>

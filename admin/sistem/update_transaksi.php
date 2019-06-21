@@ -3,7 +3,6 @@ include_once '../../sistem/koneksi.php';
 
 $id_transaksi = $_GET['id_transaksi'];
 $status = $_GET['status'];
-echo "UPDATE transaksi SET `status` = '$status' WHERE id_transaksi = '$id_transaksi'";
 
 $query = mysqli_query($koneksi, "UPDATE transaksi SET `status` = '$status' WHERE id_transaksi = '$id_transaksi'");
 if ($query) {

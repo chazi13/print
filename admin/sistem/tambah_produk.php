@@ -21,7 +21,7 @@ if (@$_FILES['gambar']['error'] == 0) {
     move_uploaded_file($file['tmp_name'], $path_upload . $filename);
     $fullpath = str_replace('../', '', $path_upload) . $filename;
 }
-
+// echo "INSERT INTO produk (nama_produk, gambar, harga, keterangan, id_kategori) VALUE ('$nama_produk', '$fullpath', '$harga', '$keterangan', '$kategori')";
 $query = mysqli_query($koneksi, "INSERT INTO produk (nama_produk, gambar, harga, keterangan, id_kategori) VALUE ('$nama_produk', '$fullpath', '$harga', '$keterangan', '$kategori')");
 if ($query) {
     $_SESSION['pesan'] = [

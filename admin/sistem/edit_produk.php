@@ -10,10 +10,14 @@ $keterangan = $_POST['keterangan'];
 $data_kategori = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT nama_kategori FROM kategori WHERE id_kategori = '$kategori'"));
 $nama_kategori = $data_kategori['nama_kategori'];
 
-if (@$_FILES['gambar']['error'] == 0) {
+echo "<pre>";
+print_r($_POST);
+print_r($_FILES);
+
+if ($_FILES['gambar'] && $_FILES['gambar']['error'] == 0) {
     $file = $_FILES['gambar'];
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-    $filename = strtolower(str_replace(' ', '-', $file['name'])) . '.' . $ext;
+    $filename = strtolower(str_replace(' ', '-', $file['name']));
     $path_upload = '../../assets/img/produk/' . $nama_kategori . '/';
     if (!file_exists($path_upload)) {
         mkdir($path_upload);

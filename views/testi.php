@@ -1,3 +1,10 @@
+<?php
+if($_SESSION['login'] && $_SESSION['level'] == 'user') {
+    $check_testi = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml_transaksi FROM transaksi WHERE id_user = '$_SESSION[id]' AND status = '4'"));
+    // echo "SELECT COUNT(id_transaksi) AS jml_transaksi FROM transaksi WHERE id_user = '$_SESSION[id]' AND status = '4'";
+}
+?>
+
 <div class="navbar-background"></div>
 <section id="kategori" class="section" data-stellar-background-ratio="0.5">
     <div class="container">
@@ -23,7 +30,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial1.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -43,7 +50,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial1.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -63,7 +70,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial1.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -83,7 +90,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial1.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -109,7 +116,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial2.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -129,7 +136,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial2.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -149,7 +156,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial2.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -169,7 +176,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial2.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -194,7 +201,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial3.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -214,7 +221,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial3.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -234,7 +241,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial3.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -254,7 +261,7 @@
                                                     <div class="col-sm-3">
                                                         <img alt="" src="assets/img/testimonial/testimonial3.png" class="img-circle">
                                                     </div>
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-9">
                                                         <i class="fa fa-quote-left"></i>
                                                         <h5>
                                                             Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum.
@@ -275,3 +282,28 @@
         </div>
     </div>
 </section>
+
+<?php if($_SESSION['login'] && $_SESSION['level'] == 'user' && $check_testi['jml_transaksi'] > 0): ?>
+<section class="section" id="give-testi">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <form action="sistem/tambah_testi.php" method="post">
+                        <div class="panel-body">
+                            <div class="section-header">
+                                <h2 class="section-heading text-center">Berikan Testimoni</h2>
+                                <!-- <p>Keteragan halaman testimoni</p> -->
+                            </div>
+                            <div class="form-group mar-top30">
+                                <textarea name="pesan" id="pesan" cols="30" rows="10" class="form-control" placeholder="Masukan Testimoni"></textarea>
+                            </div>
+                            <button class="btn btn-primary">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
