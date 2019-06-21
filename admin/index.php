@@ -141,7 +141,7 @@ if (!$_SESSION['login']) {
                 <li class="header">MAIN MENU</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="<?= @$dashboard_active ?>"><a href="index.php?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                <li class="<?= @$profil_active ?>"><a href="index.php?page=profilp"><i class="fa fa-institution"></i> <span>Profil Perusahaan</span></a></li>
+                <!-- <li class="<?= @$profil_active ?>"><a href="index.php?page=profilp"><i class="fa fa-institution"></i> <span>Profil Perusahaan</span></a></li> -->
                 <li class="<?= @$tentang_active ?>"><a href="index.php?page=tentang"><i class="fa fa-file-text"></i> <span>Tentang</span></a></li>
                 <li class="<?= @$pk_active ?> treeview">
                     <a href="#"><i class="fa fa-cubes"></i> <span>Produk</span>
@@ -277,11 +277,30 @@ if (!$_SESSION['login']) {
 
             $('.data-table').dataTable();
 
+            var BASE_URL = '<?= 'http://' . $_SERVER['HTTP_HOST'] . str_replace('admin/' . basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']) ?>'; // use your own base url
             tinymce.init({
-                selector: '.texteditor',  // change this value according to your HTML
+                selector: ".texteditor",
+                theme: "modern",
+                // width: 680,
+                height: 500,
+                relative_urls: false,
+                remove_script_host: false,
+                // document_base_url: BASE_URL,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+                    "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
+                ],
+                toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+                toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+                image_advtab: true,
+                external_filemanager_path: BASE_URL + "/assets/plugins/filemanager/",
+                filemanager_title: "Media Gallery",
+                external_plugins: { "filemanager": BASE_URL + "/assets/plugins/filemanager/plugin.min.js" }
             });
         });
     </script>
 </body>
 </html>
 <?php unset($_SESSION['pesan']) ?>
+
