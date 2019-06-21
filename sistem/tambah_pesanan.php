@@ -24,7 +24,7 @@ if (@$_FILES['ilustrasi']['error'] == 0) {
 
 $query = mysqli_query($koneksi, "INSERT INTO keranjang (`jml_pesan`, `desain`, `file`, `catatan`, `id_produk`, `id_user`) VALUE ('$jml_pesanan', '$desain', '$fullpath', '$catatan', '$id_produk', '$id_user')");
 if ($query) {
-    $check_keranjang = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_keranjang) AS jml_keranjang FROM keranjang WHERE id_user = '$row[id_user]'"));
+    $check_keranjang = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_keranjang) AS jml_keranjang FROM keranjang WHERE id_user = '$id_user'"));
     $_SESSION['jml_keranjang'] = $check_keranjang['jml_keranjang'];
 
     $_SESSION['pesan'] = [

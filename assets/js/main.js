@@ -85,8 +85,8 @@
     return 'Rp. ' + rupiah;
   }
 
-  $('.pay-method').click(function () {
-    var biayaPengiriman = $(this).attr('data-harga');
+  $('#metode').change(function () {
+    var biayaPengiriman = $('option:selected', this).attr('data-harga');
     var subtotal = $('#subtotal').val();
     var total = parseInt(biayaPengiriman) + parseInt(subtotal);
 
@@ -102,7 +102,7 @@
   $('.modal').modal('hide');
   $('[data-toggle="tooltip"]').tooltip();
 
-  $('#btn-konfirmasi').click(function () {
+  $('.btn-konfirmasi').click(function () {
     var dataJson = atob($(this).attr('data-transaksi'));
     var dataTransaksi = $.parseJSON(dataJson);
 
@@ -111,8 +111,9 @@
     $('#total-transaksi').val(dataTransaksi.total);
   });
 
-  $('#btn-detail-pesanan').click(function () {
+  $('.btn-detail-pesanan').click(function () {
     var idTransaksi = $(this).attr('data-transaksi');
+    console.log(idTransaksi);
     $.ajax({
       url: 'detail_pesanan.php',
       method: 'GET',
@@ -123,7 +124,7 @@
     })
   });
 
-  $('#btn-detail-transaksi').click(function () {
+  $('.btn-detail-transaksi').click(function () {
     var idTransaksi = $(this).attr('data-transaksi');
     $.ajax({
       url: 'detail_transaksi.php',
@@ -134,4 +135,26 @@
       }
     })
   });
+
+  $('#provinsi, #kota, #kecamatan').change(function () {
+    var term = $(this).attr('data-term');
+    var val = $(this).val();
+    var target = $(this).attr('data-target');
+    var sectar = $(this).attr('sectar');
+    var data = {
+      "term": term,
+      "val": val,
+      "target": target
+    }
+
+    $.ajax({
+      url: 'wilayah.php',
+      data: data,
+      method: 'GET',
+      success: function(res) {
+        $('#' + sectar).removeAttr('disabled');
+        $('#' + sectar).html(res);
+      }
+    })
+  })
 })(jQuery);

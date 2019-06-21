@@ -43,6 +43,12 @@ switch ($page) {
         $page = 'edit_produk.php';
         break;
 
+    case 'ongkir':
+        $ongkir_active = 'active';
+        $page_header = 'Metode Pengiriman';
+        $page = 'ongkir.php';
+        break;
+
     case 'user':
         $user_active = 'active';
         $page_header = 'Daftar User';

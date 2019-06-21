@@ -1,7 +1,12 @@
 <?php
 $query = mysqli_query($koneksi, "SELECT * FROM keranjang JOIN produk ON keranjang.id_produk = produk.id_produk WHERE id_user = '$_SESSION[id]'");
-$pengiriman = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$_SESSION[id]'"));
 $subtotal = 0;
+
+$pengiriman = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$_SESSION[id]'"));
+$query_prov = mysqli_query($koneksi, "SELECT nama_prov FROM ongkir GROUP BY nama_prov");
+$query_kota = mysqli_query($koneksi, "SELECT nama_kota FROM ongkir WHERE nama_prov LIKE '%$pengiriman[provinsi]%' GROUP BY nama_kota");
+$query_kec = mysqli_query($koneksi, "SELECT nama_kec FROM ongkir WHERE nama_kota LIKE '%$pengiriman[kota]%' GROUP BY nama_kec");
+$metode = mysqli_query($koneksi, "SELECT id_ongkir, harga, metode FROM ongkir WHERE nama_kec LIKE '%$pengiriman[kecamatan]%'");
 ?>
 
 <div class="navbar-background"></div>
@@ -23,6 +28,58 @@ $subtotal = 0;
 
                     <div class="panel">
                         <div class="panel-body">
+                            <div class="form-group row">
+                                <label class="col-sm-4" for="provinsi">Pilih Provinsi</label>
+                                <div class="col-sm-8">
+                                    <select name="provinsi" id="provinsi" class="form-control" data-term="nama_prov" data-target="nama_kota" sectar="kota">
+                                        <option value="" disabled selected>-- Pilih Provinsi --</option>
+                                        <?php while ($rp = mysqli_fetch_assoc($query_prov)): ?>
+                                            <option value="<?= $rp['nama_prov'] ?>" <?= ($rp['nama_prov'] == $pengiriman['provinsi']) ? 'selected' : '' ?>><?= $rp['nama_prov'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4" for="kota">Pilih Kota</label>
+                                <div class="col-sm-8">
+                                    <select name="kota" id="kota" class="form-control" data-term="nama_kota" data-target="nama_kec" sectar="kecamatan">
+                                        <option value="" disabled selected>-- Pilih Kota --</option>
+                                        <?php while ($rko = mysqli_fetch_assoc($query_kota)): ?>
+                                            <option value="<?= $rko['nama_kota'] ?>" <?= ($rko['nama_kota'] == $pengiriman['kota']) ? 'selected' : '' ?>><?= $rko['nama_kota'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4" for="kecamatan">Pilih Kecamatan</label>
+                                <div class="col-sm-8">
+                                    <select name="kecamatan" id="kecamatan" class="form-control" data-term="nama_kec" data-target="metode" sectar="metode">
+                                        <option value="" disabled selected>-- Pilih Kecamatan --</option>
+                                        <?php while ($rke = mysqli_fetch_assoc($query_kec)): ?>
+                                            <option value="<?= $rke['nama_kec'] ?>" <?= ($rke['nama_kec'] == $pengiriman['kecamatan']) ? 'selected' : '' ?>><?= $rke['nama_kec'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4" for="Alamat">Alamat Lengkap</label>
+                                <div class="col-sm-8">
+                                    <textarea name="alamat" id="alamat" rows="3" class="form-control" placeholder="Alamat Lengkap"><?= $pengiriman['alamat'] ?></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4" for="metode">Pilih Metode</label>
+                                <div class="col-sm-8">
+                                    <select name="metode" id="metode" class="form-control">
+                                        <option value="" disabled selected>-- Pilih Metode --</option>
+                                        <?php while ($rm = mysqli_fetch_assoc($metode)): ?>
+                                            <option value="<?= $rm['id_ongkir'] ?>" data-harga="<?= $rm['harga'] ?>"><?= $rm['metode'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="panel-body">
                             <h4>Alamat Pengiriman</h4>
                             <dd><?= $pengiriman['alamat'] ?></dd>
                             <hr>
@@ -42,7 +99,7 @@ $subtotal = 0;
                                     <label for="jneyes">JNE YES </label> <span class="text-right txt-bold pull-right" style="text-align: right; color: #333 !important;">Rp. 18.000</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="section-header">

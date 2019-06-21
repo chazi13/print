@@ -1,6 +1,8 @@
 <?php
-    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$_SESSION[id]'");
-    $profil = mysqli_fetch_assoc($query);
+$query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$_SESSION[id]'");
+$profil = mysqli_fetch_assoc($query);
+
+$query_prov = mysqli_query($koneksi, "SELECT nama_prov FROM ongkir GROUP BY nama_prov");
 ?>
 
 <div class="navbar-background"></div>
@@ -43,6 +45,27 @@
                             </div>
 
                             <div class="row">
+                                <div class="form-group col-md-4 col-sm-12"><label for="provinsi">Pilih Provinsi</label>
+                                    <select name="provinsi" id="provinsi" class="form-control" data-term="nama_prov" data-target="nama_kota" sectar="kota">
+                                        <option value="" disabled selected>-- Pilih Provinsi --</option>
+                                        <?php while ($rp = mysqli_fetch_assoc($query_prov)): ?>
+                                            <option value="<?= $rp['nama_prov'] ?>"><?= $rp['nama_prov'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4 col-sm-12"><label for="kota">Pilih Kota</label>
+                                    <select name="kota" id="kota" class="form-control" data-term="nama_kota" data-target="nama_kec" sectar="kecamatan" disabled>
+                                        <option value="" disabled selected>-- Pilih Kota --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4 col-sm-12"><label for="kecamatan">Pilih Kecamatan</label>
+                                    <select name="kecamatan" id="kecamatan" class="form-control" data-term="nama_kec" data-target="metode" sectar="metode" disabled>
+                                        <option value="" disabled selected>-- Pilih kecamatan --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="form-group col-md-6 col-sm-12">
                                     <label for="alamat">Alamat Lengkap :</label>
                                     <textarea name="alamat" id="alamat" rows="5" class="form-control" placeholder="Alamat Lengkap"><?= $profil['alamat'] ?></textarea>
@@ -54,7 +77,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" value="Simpan" class="btn btn-get-started">
+                                <input type="submit" name="simpan" value="Simpan" class="btn btn-get-started">
                             </div>
                         </form>
                     </div>

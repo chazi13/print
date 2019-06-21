@@ -57,6 +57,12 @@ switch ($get_page) {
         $profil_active = 'active';
         $page = "views/edit_profil.php";
         break;
+
+    case 'edit_password':
+        is_login('user');
+        $profil_active = 'active';
+        $page = "views/edit_password.php";
+        break;
     
     default:
         $home_active = 'active';

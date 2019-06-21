@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="main-content">
     <?php include $page ?>
   </div>
 

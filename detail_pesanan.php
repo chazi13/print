@@ -2,7 +2,7 @@
 include 'sistem/koneksi.php';
 
 $id_transaksi = $_GET['id_transaksi'];
-$query = mysqli_query($koneksi, "SELECT * FROM detail_transaksi JOIN produk ON detail_transaksi.id_produk =  produk.id_produk WHERE id_transaksi = '$id_transaksi'");
+$query = mysqli_query($koneksi, "SELECT * FROM detail_transaksi JOIN produk ON detail_transaksi.id_produk =  produk.id_produk JOIN transaksi ON detail_transaksi.id_transaksi = transaksi.id_transaksi WHERE detail_transaksi.id_transaksi = '$id_transaksi'");
 ?>
 
 <div class="list-group kat-list">
@@ -22,9 +22,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM detail_transaksi JOIN produk ON d
                     </dl>
                 </div>
                 <div class="col-sm-6 text-right pull-right">
+                    <?php if ($p['status'] == 0): ?>
                     <a href="sistem/hapus_keranjang.php?id_keranjang=<?= $p['id_keranjang'] ?>" class="btn btn-danger" onclick="return confirm('Yakin hapus pesanan?')">
                         <i class="fa fa-trash"></i>
                     </a>
+                    <?php endif; ?>
                     <h5 class="produk-title mar-top20">
                         Rp <span><?= number_format($ptotal, 0, ',', '.') ?></span>
                     </h5>

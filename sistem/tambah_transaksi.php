@@ -13,10 +13,11 @@ if (!$_POST['metode'] OR $_POST['metode'] == null) {
 
     $kode_transaksi = '#TRK-' . sprintf('%04d', $last_code + 1);
     $metode_pengiriman = $_POST['metode'];
+    $alamat = $_POST['alamat'];
     $total = $_POST['total'];
     $id_user = $_SESSION['id'];
 
-    $query_transaksi = mysqli_query($koneksi, "INSERT INTO transaksi (kode_transaksi, metode_pengiriman, total, id_user) VALUE ('$kode_transaksi', '$metode_pengiriman', '$total', '$id_user')");
+    $query_transaksi = mysqli_query($koneksi, "INSERT INTO transaksi (kode_transaksi, metode_pengiriman, alamat, total, id_user) VALUE ('$kode_transaksi', '$metode_pengiriman', '$alamat', '$total', '$id_user')");
     if ($query_transaksi) {
         $id_transaksi = mysqli_insert_id($koneksi);
         $query_keranjang = mysqli_query($koneksi, "SELECT * FROM keranjang WHERE id_user = '$id_user'");
@@ -35,14 +36,13 @@ if (!$_POST['metode'] OR $_POST['metode'] == null) {
 
         $_SESSION['pesan'] = [
             'status' => 'success',
-            'isi' => 'Transaksi berhasil'
+            'isi' => 'Transaksi berhasil ditambahkan'
         ];
     } else {
         $_SESSION['pesan'] = [
             'status' => 'danger',
-            'isi' => 'Transaksi gagal'
+            'isi' => 'Transaksi gagal ditambahkan'
         ];
     }
     header('location: ../index.php?page=riwayat');
-
 }

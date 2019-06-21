@@ -6,7 +6,7 @@ $no = 1;
 <div class="navbar-background"></div>
 <section class="section" id="keranjang">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header mar-bot30">
             <h2 class="section-heading text-left txt-bold text-center">Riwayat Pemesanan</h2>
         </div>
 
@@ -18,7 +18,7 @@ $no = 1;
         <?php endif; ?>
 
         <div class="row">
-            <div class="col-sm-12 mar-top30">
+            <div class="col-sm-12">
                 <div class="panel produk-panel">
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -55,20 +55,23 @@ $no = 1;
                                                     <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <button id="btn-detail-pesanan" class="btn btn-sm bg-primary" data-toggle="modal" data-target="#detail-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
+                                                    <button class="btn btn-sm bg-primary btn-detail-pesanan" data-toggle="modal" data-target="#detail-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
                                                         <i class="fa fa-search color-white" data-toggle="tooltip" data-placement="top" title="Detail Pesanan"></i>
                                                     </button>
 
                                                     <?php if ($row['status'] == 3 ||  $row['status'] == 4): ?>
-                                                    <button id="btn-detail-transaksi" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detail-transaksi" data-transaksi="<?= $row['id_transaksi'] ?>">
+                                                    <button class="btn btn-sm btn-info btn-detail-transaksi" data-toggle="modal" data-target="#detail-transaksi" data-transaksi="<?= $row['id_transaksi'] ?>">
                                                         <i class="fa fa-file-text color-white" data-toggle="tooltip" data-placement="top" title="Detail Transaksi"></i>
                                                     </button>
                                                     <?php endif; ?>
 
                                                     <?php if ($row['status'] == 0): ?>
-                                                    <button id="btn-konfirmasi" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#konfirmasi-pembayaran" data-transaksi="<?= base64_encode(json_encode($row)) ?>">
+                                                    <button class="btn btn-sm btn-warning btn-konfirmasi" data-toggle="modal" data-target="#konfirmasi-pembayaran" data-transaksi="<?= base64_encode(json_encode($row)) ?>">
                                                         <i class="fa fa-file-text color-white" data-toggle="tooltip" data-placement="top" title="Konfirmasi Pembayaran"></i>
                                                     </button>
+                                                    <a href="sistem/hapus_transaksi.php?id_transaksi=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Batalkan Transaksi" onclick="return confirm('Batalkan dan hapus transaksi?')">
+                                                        <i class="fa fa-close"></i>
+                                                    </a>
                                                     <?php elseif ($row['status'] == 3): ?>
                                                     <a href="sistem/update_transaksi.php?id_transaksi=<?= $row['id_transaksi'] ?>&status=4" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Konfirmasi Selesai" onclick="return confirm('Konfirmasi Selesai?')">
                                                         <i class="fa fa-check"></i>

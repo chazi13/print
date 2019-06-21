@@ -48,7 +48,11 @@
                             <div class="panel-body">
                                 <dl>
                                     <dt>Alamat :</dt>
-                                    <dd><?= $profil['alamat'] ?></dd> <br>
+                                    <dd>
+                                        <?= $profil['alamat'] ?>
+                                        <br>
+                                        Kec. <?= $profil['kecamatan'] ?>, <?= $profil['kota'] ?>,  <?= $profil['provinsi'] ?>
+                                    </dd> <br>
                                     <dt>Keterangan :</dt>
                                     <dd><?= $profil['keterangan'] ?></dd> <br>
                                 </dl>

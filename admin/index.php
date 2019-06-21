@@ -154,6 +154,7 @@ if (!$_SESSION['login']) {
                         <li class="<?= $produk_active ?>"><a href="index.php?page=produk">Produk</a></li>
                     </ul>
                 </li>
+                <li class="<?= @$ongkir_active ?>"><a href="index.php?page=ongkir"><i class="fa fa-truck"></i> <span>Metode Pengiriman</span></a></li>
                 <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-users"></i> <span>User</span></a></li>
                 <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-list"></i> <span>Pesanan</span></a></li>
                 <li class="<?= @$testimoni_active ?>"><a href="index.php?page=testimoni"><i class="fa fa-wechat"></i> <span>Testimoni</span></a></li>
@@ -220,6 +221,16 @@ if (!$_SESSION['login']) {
                 console.log(uri);
                 var link = 'sistem/' + uri + '.php?id=' + dataId;
                 $('#linkHapusKat').attr('href', link);
+            });
+
+            $('.edit-ongkir').click(function () {
+                var dataOngkir = $.parseJSON($(this).attr('data-ongkir'));
+                $('#id_ongkir').val(dataOngkir.id_ongkir);
+                $('#nama_prov').val(dataOngkir.nama_prov);
+                $('#nama_kota').val(dataOngkir.nama_kota);
+                $('#nama_kec').val(dataOngkir.nama_kec);
+                $('#harga').val(dataOngkir.harga);
+                $('#metode').val(dataOngkir.metode);
             });
 
             $('.btn-detail-user').click(function () {

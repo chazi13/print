@@ -61,6 +61,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 	display: block;
 }
 
+.main-content {
+	min-height: 80vh;
+}
+
 .bg-dark {
 	background-color: #43413e;
 }
