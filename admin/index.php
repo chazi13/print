@@ -158,6 +158,7 @@ if (!$_SESSION['login']) {
                 <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-users"></i> <span>User</span></a></li>
                 <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-list"></i> <span>Pesanan</span></a></li>
                 <li class="<?= @$testimoni_active ?>"><a href="index.php?page=testimoni"><i class="fa fa-wechat"></i> <span>Testimoni</span></a></li>
+                <li class="<?= @$kontak_active ?>"><a href="index.php?page=kontak"><i class="fa fa-phone"></i> <span>Kontak</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
             </section>

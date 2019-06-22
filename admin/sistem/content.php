@@ -72,6 +72,12 @@ switch ($page) {
         $page_header = 'Profil Admin';
         $page = 'profil_user.php';
         break;
+
+    case 'kontak':
+        $kontak_active = 'active';
+        $page_header = 'Kontak Pesan';
+        $page = 'kontak.php';
+        break;
     
     default:
         $dashboard_active = 'active';
