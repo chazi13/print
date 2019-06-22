@@ -1,5 +1,6 @@
 <?php
 $query_produk = mysqli_query($koneksi, "SELECT * FROM kategori WHERE gambar != '' LIMIT 0, 5");
+$query_testi = mysqli_query($koneksi, "SELECT testimoni.pesan, user.nama, user.foto FROM testimoni JOIN user ON testimoni.id_user = user.id_user WHERE status = '1'");
 ?>
 
 <section id="intro">
@@ -162,46 +163,21 @@ $query_produk = mysqli_query($koneksi, "SELECT * FROM kategori WHERE gambar != '
         <div class="align-center">
           <div class="flexslider testimonials-slider">
             <ul class="slides">
-              <li>
-                <div class="testimonial clearfix">
-                  <div class="mar-bot20">
-                    <img alt="" src="assets/img/testimonial/testimonial1.png" class="img-circle">
+              <?php while ($rt = mysqli_fetch_assoc($query_testi)): ?>
+                <li>
+                  <div class="testimonial clearfix">
+                    <div class="mar-bot20">
+                      <img alt="" src="assets/img/foto/<?= $rt['foto'] ?>" class="img-circle">
+                    </div>
+                    <i class="fa fa-quote-left fa-2x"></i>
+                    <h5>
+                        <?= $rt['pesan'] ?>
+                    </h5>
+                    <br/>
+                    <span class="author">&mdash; <?= $rt['nama'] ?></span>
                   </div>
-                  <i class="fa fa-quote-left fa-5x"></i>
-                  <h5>
-                      Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-                  </h5>
-                  <br/>
-                  <span class="author">&mdash; SARAH DOE <a href="#">www.siteurl.com</a></span>
-                </div>
-              </li>
-
-              <li>
-                <div class="testimonial clearfix">
-                  <div class="mar-bot20">
-                    <img alt="" src="assets/img/testimonial/testimonial2.png" class="img-circle">
-                  </div>
-                  <i class="fa fa-quote-left fa-5x"></i>
-                  <h5>
-                      Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-                  </h5>
-                  <br/>
-                  <span class="author">&mdash; NICOLE DOE <a href="#">www.siteurl.com</a></span>
-                </div>
-              </li>
-              <li>
-                <div class="testimonial clearfix">
-                  <div class="mar-bot20">
-                    <img alt="" src="assets/img/testimonial/testimonial3.png" class="img-circle">
-                  </div>
-                  <i class="fa fa-quote-left fa-5x"></i>
-                  <h5>
-                      Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-                  </h5>
-                  <br/>
-                  <span class="author">&mdash; DASON KRUN <a href="#">www.siteurl.com</a></span>
-                </div>
-              </li>
+                </li>
+              <?php endwhile; ?>
             </ul>
           </div>
         </div>
@@ -210,37 +186,3 @@ $query_produk = mysqli_query($koneksi, "SELECT * FROM kategori WHERE gambar != '
     </div>
   </div>
 </section>
-
-<!-- Sponsor -->
-<!-- <section id="clients" class="section clearfix bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo1.png">
-          </div>
-
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo2.png">
-          </div>
-
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo3.png">
-          </div>
-
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo4.png">
-          </div>
-
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo5.png">
-          </div>
-          <div class="col-sm-2 align-center">
-            <img alt="logo" src="assets/img/clients/logo6.png">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
