@@ -84,7 +84,7 @@ $produk = mysqli_fetch_assoc($query);
                             </div>
                             <hr>
 
-                            <button type="submit" class="btn btn-success">Kirim <i class="fa fa-send"></i></button>
+                            <button type="submit" name="simpan" value="simpan" class="btn btn-success">Kirim <i class="fa fa-send"></i></button>
                         </form>
                     </div>
                 </div>

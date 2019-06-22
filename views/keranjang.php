@@ -169,7 +169,7 @@ $metode = mysqli_query($koneksi, "SELECT id_ongkir, harga, metode FROM ongkir WH
                             <input type="hidden" name="total" id="total">
 
                             <div class="mar-top20">
-                                <button type="submit" class="btn btn-get-started btn-block">Bayar</button>
+                                <button type="submit" name="kirim" value="kirim" class="btn btn-get-started btn-block">Bayar</button>
                             </div>
                         </div>
                     </div>

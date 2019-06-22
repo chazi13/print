@@ -48,7 +48,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM kategori WHERE nama_kategori != '
             </div>
         </div>
         <div class="box-footer">
-            <button type="submit" class="btn btn-primary" style="margin-left: 5px;">Simpan <i class="fa fa-save"></i></button> 
+            <button type="submit" name="simpan" value="simpan" class="btn btn-primary" style="margin-left: 5px;">Simpan <i class="fa fa-save"></i></button> 
             <button type="reset" class="btn btn-danger pull-left">Kosongkan <i class="fa fa-refresh"></i></button>
         </div>
     </form>

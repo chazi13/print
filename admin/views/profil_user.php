@@ -19,7 +19,7 @@ $profil = mysqli_fetch_assoc($query);
                     </div>
                 </div>
                 <div class="box-footer">
-                    <input type="submit" value="Simpan" class="btn btn-success">
+                    <input type="submit" name="simpan" value="Simpan" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -59,7 +59,7 @@ $profil = mysqli_fetch_assoc($query);
                     </div>
                 </div>
                 <div class="box-footer">
-                    <input type="submit" value="Simpan" class="btn btn-primary">
+                    <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
                 </div>
             </form>
         </div>

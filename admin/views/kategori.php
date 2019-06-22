@@ -61,7 +61,7 @@ $no = 1;
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary pull-rigth">Simpan</button>
+                    <button type="submit" name="simpan" value="simpan" class="btn btn-primary pull-rigth">Simpan</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                 </div>
             </form>
@@ -92,7 +92,7 @@ $no = 1;
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary pull-rigth">Simpan</button>
+                    <button type="submit" name="simpan" value="simpan" class="btn btn-primary pull-rigth">Simpan</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                 </div>
             </form>
