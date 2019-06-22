@@ -70,8 +70,7 @@
               <h4 class="footer-title">Alamat</h4>
               <div class="footer-content">
                   <address>
-                    DKI Jakarta Jl. Gilimanuk Raya No. 60 <br>
-                    Daan Mogot Baru - Kalideres Jakarta Barat
+                    <?= $info['alamat'] ?>
                   </address>
               </div>
           </div>
@@ -89,7 +88,19 @@
           </div>
           <div class="col-md-4 col-sm-12">
               <h4 class="footer-title">Ikuti</h4>
-              <div class="footer-content"></div>
+              <div class="footer-content">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <a href="<?= $info['facebook'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/facebook.png" alt="" width="50%"></a>
+                  </div>
+                  <div class="col-sm-4">
+                    <a href="<?= $info['twitter'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/twitter.png" alt="" width="50%"></a>
+                  </div>
+                  <div class="col-sm-4">
+                    <a href="<?= $info['instagram'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/instagram.png" alt="" width="50%"></a>
+                  </div>
+                </div>
+              </div>
           </div>
       </div>
       <p class="copyright">Copyright &copy; Reserved By. <?= date('Y') ?></p>

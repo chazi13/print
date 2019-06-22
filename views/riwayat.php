@@ -151,17 +151,17 @@ $no = 1;
                                 <tr>
                                     <th>Bank</th>
                                     <td>:</td>
-                                    <td></td>
+                                    <td><?= $info['bank'] ?></td>
                                 </tr>
                                 <tr>
                                     <th>Atas Nama</th>
                                     <td>:</td>
-                                    <td></td>
+                                    <td><?= $info['atas_nama'] ?></td>
                                 </tr>
                                 <tr>
                                     <th>No. Rekening</th>
                                     <td>:</td>
-                                    <td></td>
+                                    <td><?= $info['rek'] ?></td>
                                 </tr>
                                 <tr>
                                     <th>Nominal Transfer</th>

@@ -69,3 +69,5 @@ switch ($get_page) {
         $page = "views/home.php";
         break;
 }
+
+$info = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM info_toko"));

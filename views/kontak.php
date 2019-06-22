@@ -19,16 +19,24 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <h4 class="txt-bold">Temukan Kami</h4>
-                <dl>
-                    <dt>Alamat</dt>
-                    <dd></dd>
-                    <dt>Email</dt>
-                    <dd></dd>
-                    <dt>Telp</dt>
-                    <dd></dd>
-                    <dt>Fax</dt>
-                    <dd></dd>
-                </dl>
+                <div class="list-group kat-list">
+                    <div class="list-group-item" style="border-top: none;">
+                        <h4>Alamat</h4>
+                        <p><?= $info['alamat'] ?></p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4>Email</h4>
+                        <p><?= $info['email'] ?></p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4>Telpon</h4>
+                        <p><?= $info['telp'] ?></p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4>Fax</h4>
+                        <p><?= $info['fax'] ?></p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <h4 class="txt-bold">Hubungi Kami</h4>
