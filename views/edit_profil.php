@@ -49,18 +49,24 @@ $query_prov = mysqli_query($koneksi, "SELECT nama_prov FROM ongkir GROUP BY nama
                                     <select name="provinsi" id="provinsi" class="form-control" data-term="nama_prov" data-target="nama_kota" sectar="kota">
                                         <option value="" disabled selected>-- Pilih Provinsi --</option>
                                         <?php while ($rp = mysqli_fetch_assoc($query_prov)): ?>
-                                            <option value="<?= $rp['nama_prov'] ?>"><?= $rp['nama_prov'] ?></option>
+                                            <option value="<?= $rp['nama_prov'] ?>" <?= ($rp['nama_prov'] == $profil['provinsi']) ? 'selected' : '' ?>><?= $rp['nama_prov'] ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-12"><label for="kota">Pilih Kota</label>
-                                    <select name="kota" id="kota" class="form-control" data-term="nama_kota" data-target="nama_kec" sectar="kecamatan" disabled>
+                                    <select name="kota" id="kota" class="form-control" data-term="nama_kota" data-target="nama_kec" sectar="kecamatan" <?= ($profil['kota'] == '') ? 'disabled' : '' ?>>
                                         <option value="" disabled selected>-- Pilih Kota --</option>
+                                        <?php if ($profil['kota'] !== ''): ?>
+                                            <option value="<?= $profil['kota'] ?>" selected><?= $profil['kota'] ?></option>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-12"><label for="kecamatan">Pilih Kecamatan</label>
-                                    <select name="kecamatan" id="kecamatan" class="form-control" data-term="nama_kec" data-target="metode" sectar="metode" disabled>
+                                    <select name="kecamatan" id="kecamatan" class="form-control" data-term="nama_kec" data-target="metode" sectar="metode" <?= ($profil['kecamatan'] == '') ? 'disabled' : '' ?>>
                                         <option value="" disabled selected>-- Pilih kecamatan --</option>
+                                        <?php if ($profil['kecamatan'] !== ''): ?>
+                                            <option value="<?= $profil['kecamatan'] ?>" selected><?= $profil['kecamatan'] ?></option>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 <?php
-    $query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama FROM transaksi JOIN user ON transaksi.id_user = user.id_user ORDER BY tgl DESC, `status` ASC");
+    $query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode FROM transaksi JOIN user ON transaksi.id_user = user.id_user JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir ORDER BY tgl DESC, `status` ASC");
     $no = 1;
 ?>
 
@@ -25,7 +25,7 @@
                                 <td><?= $row['kode_transaksi'] ?></td>
                                 <td><?= $row['nama'] ?></td>
                                 <td><?= date('d-F-Y H:i:s', strtotime($row['tgl'])) ?></td>
-                                <td><?= strtoupper(str_replace('_', ' ', $row['metode_pengiriman'])) ?></td>
+                                <td><?= $row['metode'] ?></td>
                                 <td>Rp. <?= number_format($row['total'], 2, ',', '.') ?></td>
                                 <td>
                                     <?php if ($row['status'] == 0): ?>
@@ -41,12 +41,12 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <button id="btn-detail-pesanan" class="btn btn-sm bg-primary" data-toggle="modal" data-target="#detail-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
+                                    <button class="btn btn-sm bg-primary btn-detail-pesanan" data-toggle="modal" data-target="#detail-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
                                         <i class="fa fa-search color-white" data-toggle="tooltip" data-placement="top" title="Detail Pesanan"></i>
                                     </button>
 
-                                    <?php if ($row['status'] == 3 ||  $row['status'] == 4): ?>
-                                    <button id="btn-detail-transaksi" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detail-transaksi" data-transaksi="<?= $row['id_transaksi'] ?>">
+                                    <?php if ($row['status'] > 2 ): ?>
+                                    <button class="btn btn-sm btn-info btn-detail-transaksi" data-toggle="modal" data-target="#detail-transaksi" data-transaksi="<?= $row['id_transaksi'] ?>">
                                         <i class="fa fa-file-text color-white" data-toggle="tooltip" data-placement="top" title="Detail Transaksi"></i>
                                     </button>
                                     <?php endif; ?>
@@ -56,7 +56,7 @@
                                         <i class="fa fa-tasks"></i>
                                     </a>
                                     <?php elseif ($row['status'] == 2): ?>
-                                    <button id="konfirm-kirim" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#kirim-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
+                                    <button class="btn btn-sm btn-primary konfirm-kirim" data-toggle="modal" data-target="#kirim-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
                                         <i class="fa fa-truck color-white" data-toggle="tooltip" data-placement="top" title="Kirim Pesanan"></i>
                                     </button>
                                     <?php endif; ?>

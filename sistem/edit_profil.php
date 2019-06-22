@@ -1,9 +1,6 @@
 <?php
 include_once 'koneksi.php';
 
-echo "<pre>";
-print_r($_POST);
-
 if (@$_POST['simpan']) {
     $nama = $_POST['nama'];
     $email = $_POST['email'];
@@ -23,7 +20,7 @@ if (@$_POST['simpan']) {
         $update_foto = ", foto = '$filename'";
     }
 
-    $query = mysqli_query($koneksi, "UPDATE user SET nama = '$nama', email = '$email', telp = '$telp', provinsi = '$provinsi', kota = '$kota', kecamatan = '$kecamatan', alamat = '$alamat', keterangan = '$keterangan' $update_foto");
+    $query = mysqli_query($koneksi, "UPDATE user SET nama = '$nama', email = '$email', telp = '$telp', provinsi = '$provinsi', kota = '$kota', kecamatan = '$kecamatan', alamat = '$alamat', keterangan = '$keterangan' $update_foto WHERE id_user = '$_SESSION[id]'");
 
     if ($query) {
         $_SESSION['pesan'] = [

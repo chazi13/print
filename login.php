@@ -35,12 +35,12 @@
                   </div>
                 <?php endif; ?>
 
-                <div class="form-group input-group-lg">
+                <div class="form-group input-group-md">
                   <label for="email">Email</label>
                   <input type="email" name="email" id="email" class="form-control" placeholder="Masukan Email" required>
                 </div>
   
-                <div class="form-group input-group-lg">
+                <div class="form-group input-group-md">
                   <label for="password">Password</label>
                   <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password" required>
                 </div>

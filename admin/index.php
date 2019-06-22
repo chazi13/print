@@ -246,12 +246,12 @@ if (!$_SESSION['login']) {
                 $('.user-ket').text(dataUser.keterangan);
             });
 
-            $('#konfirm-kirim').click(function () {
+            $('.konfirm-kirim').click(function () {
                 var idTransaksi = $(this).attr('data-transaksi');
                 $('#id-transaksi').val(idTransaksi);
             });
 
-            $('#btn-detail-pesanan').click(function () {
+            $('.btn-detail-pesanan').click(function () {
                 var idTransaksi = $(this).attr('data-transaksi');
                 $.ajax({
                     url: '../detail_pesanan.php',
@@ -263,7 +263,7 @@ if (!$_SESSION['login']) {
                 })
             });
 
-            $('#btn-detail-transaksi').click(function () {
+            $('.btn-detail-transaksi').click(function () {
                 var idTransaksi = $(this).attr('data-transaksi');
                 $.ajax({
                     url: '../detail_transaksi.php',
