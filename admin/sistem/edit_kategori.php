@@ -1,7 +1,7 @@
 <?php
 include_once "../../sistem/koneksi.php";
 
-if (@$_POST['simpan']) {
+if ($_POST['simpan']) {
     $id_kategori = $_POST['id_kategori'];
     $nama_kategori = $_POST['nama_kategori'];
 

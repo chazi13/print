@@ -1,7 +1,7 @@
 <?php
 include_once "../../sistem/koneksi.php";
 
-if (@$_POST['simpan']) {
+if ($_POST['simpan']) {
     $nama_kategori = $_POST['nama_kategori'];
 
     if (@$_FILES['gambar']['error'] == 0) {
