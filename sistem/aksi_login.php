@@ -12,6 +12,7 @@ if (mysqli_num_rows($query) == 1) {
     
     $_SESSION['id'] = $row['id_user'];
     $_SESSION['nama'] = $row['nama'];
+    $_SESSION['email'] = $row['email'];
     $_SESSION['foto'] = $row['foto'];
     $_SESSION['level'] = 'user';
     $_SESSION['login'] = true;

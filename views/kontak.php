@@ -43,11 +43,11 @@
                 <form action="sistem/tambah_kontak.php" method="post" id="contact-form">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap:</label>
-                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukan Nama Lengkap">
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukan Nama Lengkap" <?= @$_SESSION['nama'] ? 'value="' . $_SESSION['nama'] . '"' : '' ?>>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Masukan Email">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Masukan Email" <?= @$_SESSION['email'] ? 'value="' . $_SESSION['email'] . '"' : '' ?>>
                     </div>
                     <div class="form-group contactForm">
                         <label for="pesan">Pesan</label>

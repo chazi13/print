@@ -25,8 +25,8 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       	  <span class="fa fa-bars color-white"></span>
         </button>
-        <div class="navbar-logo">
-          <a href="index.html"><img data-0="width:155px;" data-300=" width:120px;" src="assets/img/logo-jasa-cetak-color.png" alt=""></a>
+        <div class="navbar-logo col-sm-3">
+          <a href="index.php"><img data-0="width:155px;" data-300=" width:120px;" src="assets/img/logo-jasa-cetak-color.png" alt="" width="100%"></a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
@@ -66,7 +66,7 @@
   <section id="footer" class="section footer">
     <div class="container">
       <div class="row">
-          <div class="col-md-4 col-sm-12">
+          <div class="col-md-5 col-sm-12">
               <h4 class="footer-title">Alamat</h4>
               <div class="footer-content">
                   <address>
@@ -74,7 +74,7 @@
                   </address>
               </div>
           </div>
-          <div class="col-md-4 col-sm-12">
+          <div class="col-md-3 col-sm-12">
               <h4 class="footer-title">Menu</h4>
               <div class="footer-content">
                   <ul class="footer-menu">
@@ -90,14 +90,14 @@
               <h4 class="footer-title">Ikuti</h4>
               <div class="footer-content">
                 <div class="row">
-                  <div class="col-sm-4">
-                    <a href="<?= $info['facebook'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/facebook.png" alt="" width="50%"></a>
+                  <div class="col-sm-12">
+                    <a href="<?= $info['facebook'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/facebook.png" alt="" width="15%"></a> &nbsp;&nbsp;&nbsp;
+                    <a href="<?= $info['twitter'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/twitter.png" alt="" width="15%"></a> &nbsp;&nbsp;&nbsp;
+                    <a href="<?= $info['instagram'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/instagram.png" alt="" width="15%"></a> &nbsp;&nbsp;&nbsp;
                   </div>
                   <div class="col-sm-4">
-                    <a href="<?= $info['twitter'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/twitter.png" alt="" width="50%"></a>
                   </div>
                   <div class="col-sm-4">
-                    <a href="<?= $info['instagram'] ?>" target="_blank" rel="noopener noreferrer"><img src="assets/img/sosmed/instagram.png" alt="" width="50%"></a>
                   </div>
                 </div>
               </div>

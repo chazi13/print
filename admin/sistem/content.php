@@ -1,6 +1,7 @@
 <?php
 include_once '../sistem/koneksi.php';
 
+is_login('admin');
 $page = $_GET['page'];
 switch ($page) {
     case 'dashboard':
@@ -59,6 +60,12 @@ switch ($page) {
         $pesanan_active = 'active';
         $page_header = 'Daftar Pesanan';
         $page = 'pesanan.php';
+        break;
+
+    case 'report':
+        $report_active = 'active';
+        $page_header = 'Laporan';
+        $page = 'report.php';
         break;
 
     case 'testimoni':

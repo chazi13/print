@@ -32,7 +32,7 @@ if (!$_SESSION['login']) {
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="index.php" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">J<b>C</b></span>
                 <!-- logo for regular state and mobile devices -->
@@ -157,6 +157,7 @@ if (!$_SESSION['login']) {
                 <li class="<?= @$ongkir_active ?>"><a href="index.php?page=ongkir"><i class="fa fa-truck"></i> <span>Metode Pengiriman</span></a></li>
                 <li class="<?= @$user_active ?>"><a href="index.php?page=user"><i class="fa fa-users"></i> <span>User</span></a></li>
                 <li class="<?= @$pesanan_active ?>"><a href="index.php?page=pesanan"><i class="fa fa-list"></i> <span>Pesanan</span></a></li>
+                <li class="<?= @$report_active ?>"><a href="index.php?page=report"><i class="fa fa-list-alt"></i> <span>Laporan</span></a></li>
                 <li class="<?= @$testimoni_active ?>"><a href="index.php?page=testimoni"><i class="fa fa-wechat"></i> <span>Testimoni</span></a></li>
                 <li class="<?= @$kontak_active ?>"><a href="index.php?page=kontak"><i class="fa fa-phone"></i> <span>Kontak</span></a></li>
             </ul>

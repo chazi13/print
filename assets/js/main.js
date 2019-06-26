@@ -156,5 +156,11 @@
         $('#' + sectar).html(res);
       }
     })
+  });
+
+  $('#pesan').keyup(function(e) {
+    if ($(this).get(0).selectionStart == 1) {
+      $(this).val(e.key.toUpperCase());
+    }
   })
 })(jQuery);

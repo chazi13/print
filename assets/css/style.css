@@ -391,6 +391,10 @@ section.section {
 	padding-bottom:0;
 }
 
+.navbar-logo.col-sm-3 {
+	padding: 0;
+}
+
 .nav li {
 	height: 100%;
 	line-height: 100%;
@@ -645,6 +649,75 @@ section.featured.inner {
 	line-height: 1.5em;
 }
 
+.testi-form, .send-testi button {
+	height: 100px !important;
+}
+
+.send-testi {
+	vertical-align: top;
+}
+
+.send-testi button {
+	border: 1px #222;
+	border-radius: 0 4px 4px 0;
+}
+
+.testi-section {
+	max-height: 1000px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+/* width */
+.testi-section::-webkit-scrollbar {
+	width: 5px;
+}
+  
+/* Track */
+.testi-section::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey; 
+	border-radius: 2px;
+}
+
+/* Handle */
+.testi-section::-webkit-scrollbar-thumb {
+	background: rgb(5, 42, 62); 
+	border-radius: 10px;
+}
+
+.testi-section .testi-item .col-sm-4 {
+	padding-right: 0;
+}
+
+.testi-autor-foto {
+	width: 90%;
+}
+
+.testi-autor {
+	display: block;
+	margin-top: 30px;
+	color: rgba(5, 42, 62, 1);
+}
+
+@media screen and (max-width: 768px) {
+	.testi-section .testi-item > .row > div {
+		float: left;
+	}
+
+	.testi-section .testi-item .col-sm-4 {
+		width: 25%;
+		padding-right: 0;
+	}
+
+	.testi-section .testi-item .col-sm-8 {
+		width: 75%;
+	}
+
+	.testi-autor-foto {
+		width: 100%;
+	}
+}
+
 /*===========================
   --- Contact ----
 =========================== */
@@ -795,13 +868,10 @@ ul.social-network li {
 
 /* footer menu */
 ul.footer-menu {
-	list-style: none;
-	display: inline;
 	margin-left:0 !important;
 	padding: 0;
 }
 ul.footer-menu li {
-	display: inline;
 	list-style-position: inside;
 	margin-right: 10px;
 }

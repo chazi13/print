@@ -1,5 +1,5 @@
 <?php
-$query = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE id_user = '$_SESSION[id]'");
+$query = mysqli_query($koneksi, "SELECT * FROM transaksi JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE id_user = '$_SESSION[id]'");
 $no = 1;
 ?>
 
@@ -39,7 +39,7 @@ $no = 1;
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $row['kode_transaksi'] ?></td>
                                                 <td><?= date('d-F-Y H:i:s', strtotime($row['tgl'])) ?></td>
-                                                <td><?= strtoupper(str_replace('_', ' ', $row['metode_pengiriman'])) ?></td>
+                                                <td><?= strtoupper(str_replace('_', ' ', $row['metode'])) ?></td>
                                                 <td>Rp. <?= number_format($row['total'], 2, ',', '.') ?></td>
                                                 <td>
                                                     <?php if ($row['status'] == 0): ?>

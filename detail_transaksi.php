@@ -2,7 +2,7 @@
 include 'sistem/koneksi.php';
 
 $id_transaksi = $_GET['id_transaksi'];
-$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama FROM transaksi JOIN user ON transaksi.id_user =  user.id_user WHERE id_transaksi = '$id_transaksi'");
+$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode FROM transaksi JOIN user ON transaksi.id_user =  user.id_user JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE id_transaksi = '$id_transaksi'");
 $transaksi = mysqli_fetch_assoc($query);
 ?>
 
@@ -27,7 +27,12 @@ $transaksi = mysqli_fetch_assoc($query);
     <tr>
         <td>Metode Pengiriman</td>
         <td>:</td>
-        <td><?= strtoupper(str_replace('_', ' ', $transaksi['metode_pengiriman'])) ?></td>
+        <td><?= strtoupper(str_replace('_', ' ', $transaksi['metode'])) ?></td>
+    </tr>
+    <tr>
+        <td>Alamat</td>
+        <td>:</td>
+        <td><?= $transaksi['alamat'] ?></td>
     </tr>
     <tr>
         <td>Harga</td>
@@ -42,6 +47,6 @@ $transaksi = mysqli_fetch_assoc($query);
     <tr>
         <td>Bukti Pengiriman</td>
         <td>:</td>
-        <td><img src="<?= $transaksi['bukti_kirim'] ?>" alt="" width="200px"></td>
+        <td><img src="<?= (($_SESSION['level'] == 'admin') ? '../' : '') . $transaksi['bukti_kirim'] ?>" alt="" width="200px"></td>
     </tr>
 </table>
