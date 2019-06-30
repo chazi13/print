@@ -139,3 +139,22 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="file-viewer" tabindex="-1" role="dialog" aria-labelledby="file-viewerLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="file-viewerLabel">File</h4>
+            </div>
+            <div class="modal-body" style="min-height: 500px">
+                <iframe src="" frameborder="0" id="file-show" style="width: 100%; min-height:500px"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary" id="download-file" target="__blank" download>Download</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
