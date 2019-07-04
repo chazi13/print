@@ -1,4 +1,5 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
@@ -10,6 +11,17 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
+=======
+-- version 4.4.15.9
+-- https://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 27, 2019 at 03:13 PM
+-- Server version: 5.6.37
+-- PHP Version: 7.1.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 SET time_zone = "+00:00";
 
 
@@ -28,6 +40,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
@@ -35,13 +48,26 @@ CREATE TABLE `admin` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id_admin` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `foto` varchar(100) DEFAULT 'assets/img/no-pic.png',
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `foto`, `username`, `password`) VALUES
+<<<<<<< HEAD
 (1, 'Administrator', 'assets/img/foto_profil/1560931285.png', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+=======
+(1, 'Administrator', 'assets/img/foto_profil/1560931285.png', 'admin', 'cbbb842e45cfca6aed3c902a59fd8a10');
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 -- --------------------------------------------------------
 
@@ -49,7 +75,11 @@ INSERT INTO `admin` (`id_admin`, `nama`, `foto`, `username`, `password`) VALUES
 -- Table structure for table `detail_transaksi`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `detail_transaksi` (
+=======
+CREATE TABLE IF NOT EXISTS `detail_transaksi` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_detail` int(11) NOT NULL,
   `jml_pesan` int(11) NOT NULL,
   `desain` tinyint(1) NOT NULL,
@@ -57,7 +87,11 @@ CREATE TABLE `detail_transaksi` (
   `catatan` varchar(255) NOT NULL,
   `id_produk` int(11) NOT NULL,
   `id_transaksi` int(11) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `detail_transaksi`
@@ -74,7 +108,11 @@ INSERT INTO `detail_transaksi` (`id_detail`, `jml_pesan`, `desain`, `file`, `cat
 -- Table structure for table `info_toko`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `info_toko` (
+=======
+CREATE TABLE IF NOT EXISTS `info_toko` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `alamat` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telp` varchar(20) NOT NULL,
@@ -92,7 +130,11 @@ CREATE TABLE `info_toko` (
 --
 
 INSERT INTO `info_toko` (`alamat`, `email`, `telp`, `fax`, `bank`, `atas_nama`, `rek`, `facebook`, `twitter`, `instagram`) VALUES
+<<<<<<< HEAD
 ('Jl. Cipaku II No.16, RT.11/RW.4, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170', 'helpdesk@jasacetak.com', '08131235124', '0898509309', 'BRI', 'Arsyad Hakim', '141029410234021', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.instagram.com/');
+=======
+('Jl. Cipaku II No.16, RT.11/RW.4, Petogogan, DKI Jakarta 12170', 'helpdesk@jasacetak.com', '08131235124', '0898509309', 'BRI', 'Arsyad Hakim', '141029410234021', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.instagram.com/');
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 -- --------------------------------------------------------
 
@@ -100,11 +142,19 @@ INSERT INTO `info_toko` (`alamat`, `email`, `telp`, `fax`, `bank`, `atas_nama`, 
 -- Table structure for table `kategori`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(50) NOT NULL,
   `gambar` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+CREATE TABLE IF NOT EXISTS `kategori` (
+  `id_kategori` int(11) NOT NULL,
+  `nama_kategori` varchar(50) NOT NULL,
+  `gambar` varchar(100) DEFAULT 'assets/img/no-pic.png'
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `kategori`
@@ -124,10 +174,17 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `gambar`) VALUES
 -- Table structure for table `keranjang`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `keranjang` (
   `id_keranjang` int(11) NOT NULL,
   `jml_pesan` int(11) NOT NULL,
   `desain` tinyint(1) NOT NULL DEFAULT 0,
+=======
+CREATE TABLE IF NOT EXISTS `keranjang` (
+  `id_keranjang` int(11) NOT NULL,
+  `jml_pesan` int(11) NOT NULL,
+  `desain` tinyint(1) NOT NULL DEFAULT '0',
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `file` varchar(100) NOT NULL,
   `catatan` varchar(255) NOT NULL,
   `id_produk` int(11) NOT NULL,
@@ -140,14 +197,22 @@ CREATE TABLE `keranjang` (
 -- Table structure for table `konfirmasi_pembayaran`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `konfirmasi_pembayaran` (
+=======
+CREATE TABLE IF NOT EXISTS `konfirmasi_pembayaran` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_konfirmasi` int(11) NOT NULL,
   `nama_bank` varchar(20) NOT NULL,
   `nama_akun` varchar(50) NOT NULL,
   `no_rek` varchar(20) NOT NULL,
   `file_bukti` varchar(100) NOT NULL,
   `id_transaksi` int(11) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `konfirmasi_pembayaran`
@@ -163,7 +228,11 @@ INSERT INTO `konfirmasi_pembayaran` (`id_konfirmasi`, `nama_bank`, `nama_akun`, 
 -- Table structure for table `kontak`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `kontak` (
+=======
+CREATE TABLE IF NOT EXISTS `kontak` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_kontak` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -176,14 +245,22 @@ CREATE TABLE `kontak` (
 -- Table structure for table `ongkir`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `ongkir` (
+=======
+CREATE TABLE IF NOT EXISTS `ongkir` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_ongkir` int(11) NOT NULL,
   `nama_prov` varchar(100) NOT NULL,
   `nama_kota` varchar(100) NOT NULL,
   `nama_kec` varchar(100) NOT NULL,
   `metode` enum('JNE REG','JNE YES') NOT NULL,
   `harga` decimal(10,0) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `ongkir`
@@ -208,6 +285,7 @@ INSERT INTO `ongkir` (`id_ongkir`, `nama_prov`, `nama_kota`, `nama_kec`, `metode
 -- Table structure for table `produk`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `produk` (
   `id_produk` int(11) NOT NULL,
   `nama_produk` varchar(50) NOT NULL,
@@ -216,6 +294,16 @@ CREATE TABLE `produk` (
   `keterangan` text NOT NULL,
   `id_kategori` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+CREATE TABLE IF NOT EXISTS `produk` (
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(50) NOT NULL,
+  `gambar` varchar(100) NOT NULL DEFAULT 'assets/img/no-pic.png',
+  `harga` decimal(10,0) NOT NULL,
+  `keterangan` text NOT NULL,
+  `id_kategori` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `produk`
@@ -231,8 +319,13 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `gambar`, `harga`, `keterangan
 -- Table structure for table `tentang`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `tentang` (
   `tgl` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+=======
+CREATE TABLE IF NOT EXISTS `tentang` (
+  `tgl` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -249,20 +342,33 @@ INSERT INTO `tentang` (`tgl`, `text`) VALUES
 -- Table structure for table `testimoni`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `testimoni` (
+=======
+CREATE TABLE IF NOT EXISTS `testimoni` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_testi` int(11) NOT NULL,
   `tgl` datetime NOT NULL,
   `pesan` text NOT NULL,
   `status` tinyint(1) NOT NULL,
   `id_user` int(11) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `testimoni`
 --
 
 INSERT INTO `testimoni` (`id_testi`, `tgl`, `pesan`, `status`, `id_user`) VALUES
+<<<<<<< HEAD
 (1, '2019-06-21 04:12:48', 'Hasil bagus, desain juga keren, thanks ya jasa cetak.', 1, 1);
+=======
+(1, '2019-06-21 04:12:48', 'Hasil bagus, desain juga keren, thanks ya jasa cetak.', 1, 1),
+(2, '2019-06-26 11:53:59', 'Aku suka hasil cetaknya, bersih, mengkilap dan awet. Terima kasih jasacetak', 0, 2);
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 -- --------------------------------------------------------
 
@@ -270,26 +376,44 @@ INSERT INTO `testimoni` (`id_testi`, `tgl`, `pesan`, `status`, `id_user`) VALUES
 -- Table structure for table `transaksi`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
   `kode_transaksi` varchar(10) NOT NULL,
   `tgl` datetime NOT NULL DEFAULT current_timestamp(),
+=======
+CREATE TABLE IF NOT EXISTS `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `kode_transaksi` varchar(10) NOT NULL,
+  `tgl` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `metode_pengiriman` varchar(10) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `resi` varchar(20) DEFAULT NULL,
   `bukti_kirim` varchar(100) DEFAULT NULL,
   `total` decimal(10,0) NOT NULL,
+<<<<<<< HEAD
   `status` int(1) NOT NULL DEFAULT 0,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+  `status` int(1) NOT NULL DEFAULT '0',
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `kode_transaksi`, `tgl`, `metode_pengiriman`, `alamat`, `resi`, `bukti_kirim`, `total`, `status`, `id_user`) VALUES
+<<<<<<< HEAD
 (1, '#TRK-0001', '2019-06-18 15:02:32', '1', '\'isi\' => \'Pesan berhasil dihapus\'', '21093530075131', 'upload/bukti/kirim/1560855563.png', '2624800', 4, 1),
 (2, '#TRK-0002', '2019-06-22 10:09:12', '9', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', NULL, NULL, '2145000', 1, 2);
+=======
+(1, '#TRK-0001', '2019-06-18 15:02:32', '1', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', '21093530075131', 'upload/bukti/kirim/1560855563.png', '2624800', 4, 1),
+(2, '#TRK-0002', '2019-06-22 10:09:12', '9', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', '2130201923012', 'upload/bukti/kirim/1561544030.png', '2145000', 4, 2);
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 -- --------------------------------------------------------
 
@@ -297,7 +421,11 @@ INSERT INTO `transaksi` (`id_transaksi`, `kode_transaksi`, `tgl`, `metode_pengir
 -- Table structure for table `user`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `user` (
+=======
+CREATE TABLE IF NOT EXISTS `user` (
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
   `id_user` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `foto` varchar(100) NOT NULL DEFAULT 'no-foto.png',
@@ -309,14 +437,22 @@ CREATE TABLE `user` (
   `alamat` varchar(200) NOT NULL,
   `keterangan` varchar(200) NOT NULL,
   `password` varchar(255) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `foto`, `email`, `telp`, `provinsi`, `kota`, `kecamatan`, `alamat`, `keterangan`, `password`) VALUES
+<<<<<<< HEAD
 (1, 'Adi Purnowo', 'foto-profil-adi-purnowo.png', 'reza@mail.com', '0871512912', 'Banten', 'Serang', 'Curug', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', '', 'bb98b1d0b523d5e783f931550d7702b6'),
+=======
+(1, 'Adi Purnowo', 'foto-profil-adi-purnowo.png', 'adi.pur@mail.com', '0871512912', 'Banten', 'Serang', 'Curug', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', '', 'c063064dd2c579fce5632b0ba39e8ccc'),
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 (2, 'Alessa Diandra', 'foto-profil-alessa-diandra.jpg', 'alessa.d@mail.com', '0875131241', 'Banten', 'Serang', 'Curug', 'Jl. Raya Petir, No. 14 - Serang, Curug, Kota Serang, Banten 42171', '', 'b004421de079bb2531cc5cd6346d202d');
 
 --
@@ -397,69 +533,112 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
+<<<<<<< HEAD
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+=======
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
+<<<<<<< HEAD
   MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
+=======
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
+<<<<<<< HEAD
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
+=======
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
   MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `konfirmasi_pembayaran`
 --
 ALTER TABLE `konfirmasi_pembayaran`
+<<<<<<< HEAD
   MODIFY `id_konfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+=======
+  MODIFY `id_konfirmasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
+<<<<<<< HEAD
   MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+=======
+  MODIFY `id_kontak` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `ongkir`
 --
 ALTER TABLE `ongkir`
+<<<<<<< HEAD
   MODIFY `id_ongkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
+=======
+  MODIFY `id_ongkir` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
+<<<<<<< HEAD
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+=======
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
+<<<<<<< HEAD
   MODIFY `id_testi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+=======
+  MODIFY `id_testi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
+<<<<<<< HEAD
   MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+=======
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
+<<<<<<< HEAD
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
+=======
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+>>>>>>> 43b0ceea72b4e95c9e1697e8289d95a211c0b733
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

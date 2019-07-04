@@ -260,7 +260,7 @@ if (!$_SESSION['login']) {
                     method: 'GET',
                     data: {'id_transaksi': idTransaksi},
                     success: function (res) {
-                        $('#detail').html(res);
+                        $('#detail').append(res);
                     }
                 })
             });
@@ -276,6 +276,12 @@ if (!$_SESSION['login']) {
                     }
                 })
             });
+
+            $('body').on('click', '.open-file', function() {
+                var filePath = $(this).attr('data-path');
+                $('#file-show').attr('src', filePath);
+                $('#download-file').attr('href', filePath);
+            })
 
             $('.data-table').dataTable();
 

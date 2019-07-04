@@ -30,8 +30,13 @@ $query = mysqli_query($koneksi, "SELECT * FROM detail_transaksi JOIN produk ON d
                     <h5 class="produk-title mar-top20">
                         Rp <span><?= number_format($ptotal, 0, ',', '.') ?></span>
                     </h5>
+                    <?php if ($_SESSION['level'] == 'admin'): ?>
+                        <?php $prefix = ($_SESSION['level'] == 'admin') ? '../' : '' ?>
+                        <button class="open-file btn btn-primary" data-toggle="modal" data-target="#file-viewer" data-path="<?= $prefix . $p['file'] ?>"><i class="fa fa-file"></i></button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     <?php $subtotal += $ptotal; endwhile; ?>
 </div>
+
