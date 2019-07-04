@@ -99,7 +99,7 @@ $profil = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM info_toko"));
                                     <td><?= $no++ ?></td>
                                     <td><?= $tr['kode_transaksi'] ?></td>
                                     <td><?= $tr['nama'] ?></td>
-                                    <td><?= date('d-m-Y') ?></td>
+                                    <td><?= $tr['tgl'] ?></td>
                                     <td>
                                         <ul>
                                             <?php while ($item = mysqli_fetch_assoc($item_query)): ?>

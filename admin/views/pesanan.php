@@ -45,7 +45,7 @@
                                         <i class="fa fa-search color-white" data-toggle="tooltip" data-placement="top" title="Detail Pesanan"></i>
                                     </button>
 
-                                    <?php if ($row['status'] > 2 ): ?>
+                                    <?php if ($row['status'] > 0 ): ?>
                                     <button class="btn btn-sm btn-info btn-detail-transaksi" data-toggle="modal" data-target="#detail-transaksi" data-transaksi="<?= $row['id_transaksi'] ?>">
                                         <i class="fa fa-file-text color-white" data-toggle="tooltip" data-placement="top" title="Detail Transaksi"></i>
                                     </button>

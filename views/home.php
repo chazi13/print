@@ -167,7 +167,7 @@ $query_testi = mysqli_query($koneksi, "SELECT testimoni.pesan, user.nama, user.f
                 <li>
                   <div class="testimonial clearfix">
                     <div class="mar-bot20">
-                      <img alt="" src="assets/img/foto/<?= $rt['foto'] ?>" class="img-circle">
+                      <img alt="" src="assets/img/foto/<?= $rt['foto'] ?>" class="img-circle" style="width: 150px;">
                     </div>
                     <i class="fa fa-quote-left fa-2x"></i>
                     <h5>

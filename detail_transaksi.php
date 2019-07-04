@@ -2,7 +2,7 @@
 include 'sistem/koneksi.php';
 
 $id_transaksi = $_GET['id_transaksi'];
-$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode FROM transaksi JOIN user ON transaksi.id_user =  user.id_user JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE id_transaksi = '$id_transaksi'");
+$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode, konfirmasi_pembayaran.* FROM transaksi JOIN user ON transaksi.id_user =  user.id_user JOIN konfirmasi_pembayaran ON transaksi.id_transaksi = konfirmasi_pembayaran.id_transaksi JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE transaksi.id_transaksi = '$id_transaksi'");
 $transaksi = mysqli_fetch_assoc($query);
 ?>
 
@@ -39,6 +39,30 @@ $transaksi = mysqli_fetch_assoc($query);
         <td>:</td>
         <td>Rp. <?= number_format($transaksi['total'], 2, ',', '.') ?></td>
     </tr>
+    <tr>
+        <td>Nama Akun</td>
+        <td>:</td>
+        <td><?= $transaksi['nama_akun'] ?></td>
+    </tr>
+    <tr>
+        <td>Nama Bank</td>
+        <td>:</td>
+        <td><?= $transaksi['nama_bank'] ?></td>
+    </tr>
+    <tr>
+        <td>No Rek</td>
+        <td>:</td>
+        <td><?= $transaksi['no_rek'] ?></td>
+    </tr>
+    <tr>
+        <td>Bukti Pembayaran</td>
+        <td>:</td>
+        <td><img src="<?= (($_SESSION['level'] == 'admin') ? '../' : '') . $transaksi['file_bukti'] ?>" alt="" width="200px"></td>
+    </tr>
+    <tr>
+        <td colspan="3"><hr></td>
+    </tr>
+
     <tr>
         <td>No. Resi</td>
         <td>:</td>
