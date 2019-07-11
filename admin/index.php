@@ -260,7 +260,7 @@ if (!$_SESSION['login']) {
                     method: 'GET',
                     data: {'id_transaksi': idTransaksi},
                     success: function (res) {
-                        $('#detail').append(res);
+                        $('#detail').html(res);
                     }
                 })
             });

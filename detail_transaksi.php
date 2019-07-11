@@ -2,7 +2,7 @@
 include 'sistem/koneksi.php';
 
 $id_transaksi = $_GET['id_transaksi'];
-$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode, konfirmasi_pembayaran.* FROM transaksi JOIN user ON transaksi.id_user =  user.id_user JOIN konfirmasi_pembayaran ON transaksi.id_transaksi = konfirmasi_pembayaran.id_transaksi JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE transaksi.id_transaksi = '$id_transaksi'");
+$query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode, konfirmasi_pembayaran.*, konfirmasi_pembayaran.status AS status_pembayaran FROM transaksi JOIN user ON transaksi.id_user =  user.id_user JOIN konfirmasi_pembayaran ON transaksi.id_transaksi = konfirmasi_pembayaran.id_transaksi JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir WHERE transaksi.id_transaksi = '$id_transaksi'");
 $transaksi = mysqli_fetch_assoc($query);
 ?>
 
@@ -57,7 +57,13 @@ $transaksi = mysqli_fetch_assoc($query);
     <tr>
         <td>Bukti Pembayaran</td>
         <td>:</td>
-        <td><img src="<?= (($_SESSION['level'] == 'admin') ? '../' : '') . $transaksi['file_bukti'] ?>" alt="" width="200px"></td>
+        <td>
+            <img src="<?= (($_SESSION['level'] == 'admin') ? '../' : '') . $transaksi['file_bukti'] ?>" alt="" width="200px">
+            <?php if ($_SESSION['level'] == 'admin' && $transaksi['status_pembayaran'] == 0): ?>
+                <br><br>
+                <a href="sistem/konfirmasi_pembayaran.php?id_transaksi=<?= $id_transaksi ?>" class="btn btn-primary btn-sm">Konfrimasi Pembayaran</a>
+            <?php endif; ?>
+        </td>
     </tr>
     <tr>
         <td colspan="3"><hr></td>

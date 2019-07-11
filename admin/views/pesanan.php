@@ -1,5 +1,5 @@
 <?php
-    $query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode FROM transaksi JOIN user ON transaksi.id_user = user.id_user JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir ORDER BY tgl DESC, `status` ASC");
+    $query = mysqli_query($koneksi, "SELECT transaksi.*, user.nama, ongkir.metode, konfirmasi_pembayaran.status AS status_pembayaran FROM transaksi JOIN user ON transaksi.id_user = user.id_user JOIN ongkir ON transaksi.metode_pengiriman = ongkir.id_ongkir LEFT JOIN konfirmasi_pembayaran ON transaksi.id_transaksi = konfirmasi_pembayaran.id_transaksi ORDER BY tgl DESC, `status` ASC");
     $no = 1;
 ?>
 
@@ -59,6 +59,11 @@
                                     <button class="btn btn-sm btn-primary konfirm-kirim" data-toggle="modal" data-target="#kirim-pesanan" data-transaksi="<?= $row['id_transaksi'] ?>">
                                         <i class="fa fa-truck color-white" data-toggle="tooltip" data-placement="top" title="Kirim Pesanan"></i>
                                     </button>
+                                    <?php endif; ?>
+
+                                    <?php if (@$row['status_pembayaran'] && $row['status_pembayaran'] == 1): ?>
+                                        &nbsp;&nbsp; 
+                                        <i class="fa fa-check-circle text-success" data-toggle="tooltip" data-placement="top" title="Pembayaran Telah Dikonfirmasi"></i>
                                     <?php endif; ?>
                                 </td>
                             </tr>

@@ -65,17 +65,17 @@ $produk = mysqli_fetch_assoc($query);
                                 <input type="number" name="jml_pesan" id="jml" class="form-control" placeholder="Masukan Jumlah Pesanan" required>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-7">
+                                <!-- <div class="col-sm-7">
                                     <input type="checkbox" name="desain" value="1" id="desain">
                                     <label for="desain">Belum Ada File Design</label>
                                 </div>
                                 <div class="col-sm-5 pull-right text-right">
                                     Rp. 60.000,00
-                                </div>
-                                <div class="col-sm-12"><span class="text-info">#Note : Silahkan kirim gambar sketsa sebagai ilustrasi design</span></div>
+                                </div> -->
                                 <div id="ilustrasi" class="col-sm-12 mar-top5">
                                     <label for="file">File :</label>
                                     <input type="file" name="ilustrasi" id="file" class="form-control">
+                                    <span class="text-info">#Note : Silahkan kirim gambar sketsa sebagai ilustrasi design</span>
                                 </div>
                             </div>
                             <div class="form-group">
