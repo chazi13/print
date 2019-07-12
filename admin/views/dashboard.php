@@ -1,5 +1,5 @@
 <?php
-$pesanan = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml FROM transaksi WHERE status = '1'"));
+$pesanan = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml FROM transaksi WHERE status < '2'"));
 $pengerjaan = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml FROM transaksi WHERE status = '2'"));
 $pengiriman = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml FROM transaksi WHERE status = '3'"));
 $selesai = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(id_transaksi) AS jml FROM transaksi WHERE status = '4'"));

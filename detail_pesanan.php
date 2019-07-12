@@ -22,11 +22,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM detail_transaksi JOIN produk ON d
                     </dl>
                 </div>
                 <div class="col-sm-6 text-right pull-right">
-                    <?php if ($p['status'] == 0): ?>
+                    <!-- <?php if ($p['status'] == 0 && $_SESSION['level'] == 'user'): ?>
                     <a href="sistem/hapus_keranjang.php?id_keranjang=<?= $p['id_keranjang'] ?>" class="btn btn-danger" onclick="return confirm('Yakin hapus pesanan?')">
                         <i class="fa fa-trash"></i>
                     </a>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                     <h5 class="produk-title mar-top20">
                         Rp <span><?= number_format($ptotal, 0, ',', '.') ?></span>
                     </h5>
